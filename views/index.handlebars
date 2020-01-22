@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Grubbin Time</h1>
+        <p>Choose a Burger. Submit a Burger. Eat the Burger.</p>
+
+        <panel>
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="newburger">Order Burger</label>
+                    <input type="text" id="newburger" name="burger">
+                    <button type="submit" class="btn btn-success" id="addburger">
+                        <span class="fa fa-thumbs-up"></span>Order Up!
+                    </button>
+                </div>
+            </form>
+        </panel>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel-heading" id="leftside"><strong>
+                    <h2>Burgers Made</h2>
+                </strong></div>
+            <div class="panel-body">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <span><strong> {{this.burger}} - {{this.burger_name}} </strong></span>
+                    <button type="button" class="nomburger btn btn-dark" id="eatbutton" data-id"{{this.id}}"
+                        data-newDevoured="{{devour}}">NomNom</button></span>
+
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel-heading" id="rightside"><strong>Burgers Devoured</strong></div>
+            <div class="panel-body">
+                <h4>Add orders here</h4>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
