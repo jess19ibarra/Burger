@@ -36,15 +36,16 @@ $(function() {
         });
     });
 
-    //click event to delete burger
-    $(".trashburger").on("click", function(event) {
-        event.preventDefault();
 
-        var id = $(this).data("id");
+  $(".trashburger").on("click", function(event) {
+    event.preventDefault();
 
-        $.ajax({
-            type: "Delete",
-            url: "/api/burgers" + id
-        }).then(location.reload());
-    });
+    var id = $(this).data("id");
+
+    // Send the DELETE request.
+    $.ajax({
+      type: "DELETE",
+      url: "/api/burgers/" + id
+    }).then(location.reload());
+  });
 });
