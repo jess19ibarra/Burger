@@ -41,19 +41,19 @@ router.get("/", function(req, res) {
     });
   });
 
-  // delete request
-//   router.delete(condition, function(req, res) {
-//     var condition = "id = " + req.params.id;
+  //delete request
+  router.delete("/api/burgers", function(req, res) {
+    var condition = "id = " + req.params.id;
 
-//     console.log("condition", condition);
+    console.log("condition", condition);
     
-//     burger.deleteOne(condition, function(result) {
-//       if ((result, changedRows === 0)) {
-//         return res.status(404).end();
-//       } else {
-//         res.status(200).end();
-//       }
-//     });
-//   });
+    burger.deleteOne(condition, function(result) {
+      if ((result, changedRows === 0)) {
+        return res.status(404).end();
+      } else {
+        res.status(200).end();
+      }
+    });
+  });
 });
 module.exports = router;

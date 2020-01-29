@@ -1,7 +1,29 @@
 body {
-    background-image: url("burger.gif");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    background-color: rgb(231, 171, 58);
+    justify-content: space-evenly;
+    justify-content: space-around;
+  }
+ 
+.jumbotron {
+    background-color: red;
+    font-stretch: ultra-expanded, narrower;
+    font-style: italic;
+    text-align: center;
   }
 
+#burgergif {
+    width: 200px;
+    height: 250px;
+    align-items: center; 
+}
+
+#burgermadegif, #trashburgergif  {
+    width: 400px;
+    height: 300px;
+    align-items: center; 
+}
+
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}

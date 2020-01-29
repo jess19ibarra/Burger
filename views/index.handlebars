@@ -1,46 +1,70 @@
 <div class="container">
 
-    <div class="jumbotron">
+    <div class="jumbotron"> <img src="https://media2.giphy.com/media/ToMjGplHPoYqSg7oACc/giphy.gif" id="burgergif">
         <h1>Grubbin Time</h1>
-        <p>Choose a Burger. Submit a Burger. Eat the Burger.</p>
+        <p>Place a Burger order and then devour the Burger.</p>
 
         <panel>
-            <form class="create-form">
-                <div class="form-group">
-                    <label for="newburger">Order Burger</label>
-                    <input type="text" id="newburger" name="burger">
-                    <button type="submit" class="btn btn-success" id="addburger">
-                        <span class="fa fa-thumbs-up"></span>Order Up!
-                    </button>
-                </div>
-            </form>
-        </panel>
+            <form class="create-form" <div class="form-group" <label for="newburger">Order Burger</label>
+                <input type="text" id="newburger" name="burger">
+                <button type="submit" class="btn btn-success" id="addburger">
+                    <span class="fa fa-thumbs-up"></span>Order Up!
+                </button>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="panel-heading" id="leftside"><strong>
-                    <h2>Burgers Made</h2>
-                </strong></div>
+    </form>
+    </panel>
+</div>
+<div class="row1">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="leftside">
+                <h1><strong>Burgers Made</strong></h1>
+                <img src="https://media0.giphy.com/media/Ie2r0a4nvCCnuBHWYP/giphy.gif" id="burgermadegif">
+                <br>
+                <br>
+                <p>Click the button to pay and enjoy your Burger</p>
+            </div>
             <div class="panel-body">
+
                 <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
-                    <span><strong> {{this.burger}} - {{this.burger_name}} </strong></span>
-                    <button type="button" class="nomburger btn btn-dark" id="eatbutton" data-id"{{this.id}}"
-                        data-newDevoured="{{devour}}">NomNom</button></span>
 
+                    <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                    <button type="button" class="eatburger btn btn-dark" id="eatbutton" data-id="{{this.id}}"
+                        data-newDevoured="{{devour}}"><span class="fa fa-usd"></span></button>
+                    <hr>
                     {{/unless}}
                     {{/each}}
                 </ul>
-            </div>
-        </div>
 
-        <div class="col-sm-6">
-            <div class="panel-heading" id="rightside"><strong>Burgers Devoured</strong></div>
-            <div class="panel-body">
-                <h4>Add orders here</h4>
             </div>
         </div>
     </div>
-</div>
-</div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="rightside">
+                    <h1><strong>Burgers Devoured</strong></h1>
+                    <img src="https://media.giphy.com/media/qMntr6DEZ8E4o/giphy.gif" id="trashburgergif">
+                    <br>
+                    <br>
+                    <p>Click the button to trash the burger</p>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <span><strong> {{this.id}} - {{this.burger_name}}</strong></span>
+                        <button type="button" class="trashburger btn btn-danger" id="trashbutton" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-trash"></span></button>
+                        <hr>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>

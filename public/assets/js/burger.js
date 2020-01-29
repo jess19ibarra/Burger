@@ -20,7 +20,7 @@ $(function() {
     });
 
     //click event sets devoured to true
-    $(".nomburger").on("click", function(event){
+    $(".eatburger").on("click", function(event){
         event.preventDefault();
 
         var id = $(this).data("id");
