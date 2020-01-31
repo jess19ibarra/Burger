@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
     console.log(handlebarsObj);
     res.render("index", handlebarsObj);
   });
-
+});
 // post request
   router.post("/api/burgers", function(req, res) {
     burger.insertOne(
@@ -41,19 +41,19 @@ router.get("/", function(req, res) {
     });
   });
 
-  //delete request
-  router.delete("/api/burgers", function(req, res) {
+//   //delete request
+  router.delete("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
     
     burger.deleteOne(condition, function(result) {
-      if ((result, changedRows === 0)) {
+      if ((result.changedRows === 0)) {
         return res.status(404).end();
       } else {
         res.status(200).end();
       }
     });
   });
-});
+
 module.exports = router;
